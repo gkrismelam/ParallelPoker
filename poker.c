@@ -157,11 +157,25 @@ int main(int argc,char** argv){
 
 	int straightFlushes=0;
 	float percent;
+
 	Hand pokerHand;
 	srand(time(0));
+	
 	int cnt;
 	getTotalTrials(&cnt, my_rank);
-	for (int i=0;i<cnt;i++){
+
+	int standard = cnt / comm_sz;
+	int remainder = cnt % comm_sz;
+
+	int trials;
+
+	if (my_rank < remainder){
+		trials = standard + 1;
+	} else {
+		trials = standard;
+	}
+
+	for (int i=0;i<trials;i++){
 		int cardCount=0;
 		while (cardCount<5){
 			Card card;
