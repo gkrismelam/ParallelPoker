@@ -210,6 +210,7 @@ int main(int argc,char** argv){
 		percent=(float)totalFlushes/(float)cnt*100.0;
 
 		printf("We found %d straight flushes out of %d hands or %f percent.\n",totalFlushes,cnt,percent);
+		printf("Elapsed time: %f seconds\n", end - start);
 	}
 
 	MPI_Finalize();
