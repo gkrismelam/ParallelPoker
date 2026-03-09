@@ -194,11 +194,14 @@ int main(int argc,char** argv){
 			straightFlushes++;
 	}
 
-	MPI_Reduce(&straightFlushes, &totalFlushes, 1, MPI_INIT, MPI_SUM, 0, MPI_COMM_WORLD);
+	MPI_Reduce(&straightFlushes, &totalFlushes, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+	
+	if (my_rank == 0){
 
-	percent=(float)straightFlushes/(float)cnt*100.0;
+		percent=(float)straightFlushes/(float)cnt*100.0;
 
-	printf("We found %d straight flushes out of %d hands or %f percent.\n",straightFlushes,cnt,percent);
+		printf("We found %d straight flushes out of %d hands or %f percent.\n",totalFlushes,cnt,percent);
+	}
 
 	MPI_Finalize();
 	return 0;
