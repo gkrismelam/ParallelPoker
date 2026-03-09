@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <mpi.h>
 
 typedef enum {CLUBS=0,SPADES=1,HEARTS=2,DIAMONDS=3} SUIT;
 
@@ -28,9 +29,12 @@ void randomCard(Card* card){
  * Arguments: cnt: an output variable to hold the selected number of trials
  * Returns: None
  */
- void getTotalTrials(int* cnt){
-	printf("Enter the number of trials:\n");
-	scanf("%d",cnt);
+ void getTotalTrials(int* cnt, int rank){
+	if (rank == 0){
+		printf("Enter the number of trials:\n");
+		scanf("%d",cnt);
+	}
+	MPI_Bcast(cnt, 1, MPI_INIT, 0, MPI_COMM_WORLD)
  }
 
 /*inHand
@@ -144,12 +148,19 @@ void makeStraightFlush3(Hand hand){
 }
 
 int main(int argc,char** argv){
+	int comm_sz;
+	int my_rank;
+
+	MPI_Init(&argc, &argv);
+	MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
+	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+
 	int straightFlushes=0;
 	float percent;
 	Hand pokerHand;
 	srand(time(0));
 	int cnt;
-	getTotalTrials(&cnt);
+	getTotalTrials(&cnt, my_rank);
 	for (int i=0;i<cnt;i++){
 		int cardCount=0;
 		while (cardCount<5){
@@ -171,5 +182,6 @@ int main(int argc,char** argv){
 
 	printf("We found %d straight flushes out of %d hands or %f percent.\n",straightFlushes,cnt,percent);
 
+	MPI_Finalize();
 	return 0;
 }
