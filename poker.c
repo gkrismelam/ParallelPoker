@@ -160,7 +160,7 @@ int main(int argc,char** argv){
 	float percent;
 
 	Hand pokerHand;
-	srand(time(0));
+	srand(time(NULL)+my_rank);
 
 	int cnt;
 	getTotalTrials(&cnt, my_rank);
@@ -198,7 +198,7 @@ int main(int argc,char** argv){
 	
 	if (my_rank == 0){
 
-		percent=(float)straightFlushes/(float)cnt*100.0;
+		percent=(float)totalFlushes/(float)cnt*100.0;
 
 		printf("We found %d straight flushes out of %d hands or %f percent.\n",totalFlushes,cnt,percent);
 	}
