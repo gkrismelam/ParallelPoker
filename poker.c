@@ -34,7 +34,7 @@ void randomCard(Card* card){
 		printf("Enter the number of trials:\n");
 		scanf("%d",cnt);
 	}
-	MPI_Bcast(cnt, 1, MPI_INIT, 0, MPI_COMM_WORLD)
+	MPI_Bcast(cnt, 1, MPI_INIT, 0, MPI_COMM_WORLD);
  }
 
 /*inHand
@@ -156,11 +156,12 @@ int main(int argc,char** argv){
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
 	int straightFlushes=0;
+	int totalFlushes = 0;
 	float percent;
 
 	Hand pokerHand;
 	srand(time(0));
-	
+
 	int cnt;
 	getTotalTrials(&cnt, my_rank);
 
@@ -192,6 +193,9 @@ int main(int argc,char** argv){
 		if (isStraightFlush(pokerHand))
 			straightFlushes++;
 	}
+
+	MPI_Reduce(&straightFlushes, &totalFlushes, 1, MPI_INIT, MPI_SUM, 0, MPI_COMM_WORLD);
+
 	percent=(float)straightFlushes/(float)cnt*100.0;
 
 	printf("We found %d straight flushes out of %d hands or %f percent.\n",straightFlushes,cnt,percent);
