@@ -34,7 +34,7 @@ void randomCard(Card* card){
 		printf("Enter the number of trials:\n");
 		scanf("%d",cnt);
 	}
-	MPI_Bcast(cnt, 1, MPI_INIT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(cnt, 1, MPI_INT, 0, MPI_COMM_WORLD);
  }
 
 /*inHand
