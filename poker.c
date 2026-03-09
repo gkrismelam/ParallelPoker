@@ -158,6 +158,7 @@ int main(int argc,char** argv){
 	int straightFlushes=0;
 	int totalFlushes = 0;
 	float percent;
+	double start, end;
 
 	Hand pokerHand;
 	srand(time(NULL)+my_rank);
@@ -174,6 +175,10 @@ int main(int argc,char** argv){
 		trials = standard + 1;
 	} else {
 		trials = standard;
+	}
+
+	if (my_rank == 0){
+    start = MPI_Wtime();
 	}
 
 	for (int i=0;i<trials;i++){
@@ -195,6 +200,10 @@ int main(int argc,char** argv){
 	}
 
 	MPI_Reduce(&straightFlushes, &totalFlushes, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+
+	if (my_rank == 0){
+    end = MPI_Wtime();
+	}
 	
 	if (my_rank == 0){
 
