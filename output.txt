@@ -1,0 +1,130 @@
+Script started on 2026-03-11 12:15:28-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="80" LINES="24"]
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 1 ./poker
+Enter the number of trials:
+1000
+We found 0 straight flushes out of 1000 hands or 0.000000 percent.
+Elapsed time: 0.000446 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 1 ./poker
+Enter the number of trials:
+10000
+We found 0 straight flushes out of 10000 hands or 0.000000 percent.
+Elapsed time: 0.004034 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 1 ./poker
+Enter the number of trials:
+100000
+We found 0 straight flushes out of 100000 hands or 0.000000 percent.
+Elapsed time: 0.028200 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 1 ./poker
+Enter the number of trials:
+1000000
+We found 17 straight flushes out of 1000000 hands or 0.001700 percent.
+Elapsed time: 0.200227 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 1 ./poker
+Enter the number of trials:
+10000000
+We found 133 straight flushes out of 10000000 hands or 0.001330 percent.
+Elapsed time: 1.583943 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 2 ./poker
+Enter the number of trials:
+1000
+We found 0 straight flushes out of 1000 hands or 0.000000 percent.
+Elapsed time: 0.000186 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 2 ./poker
+Enter the number of trials:
+10000
+We found 0 straight flushes out of 10000 hands or 0.000000 percent.
+Elapsed time: 0.001494 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 2 ./poker
+Enter the number of trials:
+100000 
+We found 2 straight flushes out of 100000 hands or 0.002000 percent.
+Elapsed time: 0.016926 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 2 ./poker
+Enter the number of trials:
+1000000
+We found 26 straight flushes out of 1000000 hands or 0.002600 percent.
+Elapsed time: 0.144224 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 2 ./poker
+Enter the number of trials:
+10000000
+We found 135 straight flushes out of 10000000 hands or 0.001350 percent.
+Elapsed time: 1.655440 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 4 ./poker
+Enter the number of trials:
+1000
+We found 0 straight flushes out of 1000 hands or 0.000000 percent.
+Elapsed time: 0.000118 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 4 ./poker
+Enter the number of trials:
+10000
+We found 0 straight flushes out of 10000 hands or 0.000000 percent.
+Elapsed time: 0.000968 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 4 ./poker
+Enter the number of trials:
+100000
+We found 3 straight flushes out of 100000 hands or 0.003000 percent.
+Elapsed time: 0.008703 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 4 ./poker
+Enter the number of trials:
+1000000
+We found 16 straight flushes out of 1000000 hands or 0.001600 percent.
+Elapsed time: 0.086126 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 4 ./poker
+Enter the number of trials:
+10000000
+We found 146 straight flushes out of 10000000 hands or 0.001460 percent.
+Elapsed time: 0.857942 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 8 ./poker
+Enter the number of trials:
+1000
+We found 0 straight flushes out of 1000 hands or 0.000000 percent.
+Elapsed time: 0.000084 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 8 ./poker
+1Enter the number of trials:
+10000
+We found 0 straight flushes out of 10000 hands or 0.000000 percent.
+Elapsed time: 0.000499 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 8 ./poker
+Enter the number of trials:
+100000
+We found 2 straight flushes out of 100000 hands or 0.002000 percent.
+Elapsed time: 0.004097 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 8 ./poker
+Enter the number of trials:
+1000000
+We found 17 straight flushes out of 1000000 hands or 0.001700 percent.
+Elapsed time: 0.040561 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 8 ./poker
+Enter the number of trials:
+10000000
+We found 154 straight flushes out of 10000000 hands or 0.001540 percent.
+Elapsed time: 0.405540 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 16 ./poker
+Enter the number of trials:
+1000
+We found 0 straight flushes out of 1000 hands or 0.000000 percent.
+Elapsed time: 0.000060 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 16 ./poker
+1Enter the number of trials:
+10000
+We found 0 straight flushes out of 10000 hands or 0.000000 percent.
+Elapsed time: 0.000274 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 16 ./poker
+Enter the number of trials:
+100000
+We found 3 straight flushes out of 100000 hands or 0.003000 percent.
+Elapsed time: 0.002367 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 16 ./poker
+Enter the number of trials:
+1000000
+We found 19 straight flushes out of 1000000 hands or 0.001900 percent.
+Elapsed time: 0.023387 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ srun -n 16 ./poker
+Enter the number of trials:
+10000000
+We found 152 straight flushes out of 10000000 hands or 0.001520 percent.
+Elapsed time: 0.233235 seconds
+gmelam@cisc372:~/cisc372/ParallelPoker$ exit
+exit
+
+Script done on 2026-03-11 12:19:41-04:00 [COMMAND_EXIT_CODE="0"]
